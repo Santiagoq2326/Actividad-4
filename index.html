@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD - Esfamos para servir</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sección del formulario -->
+        <div class="form-section">
+            <h2 class="login-title" id="form-title">REGISTRAR USUARIO</h2>
+
+            <form id="userForm">
+                <input type="hidden" id="userId">
+
+                <div class="login-item">
+                    <label for="name">Nombre completo</label>
+                    <i class="fas fa-user input-icon"></i>
+                    <input type="text" id="name" name="name" placeholder="Ingresa el nombre completo" required>
+                </div>
+
+                <div class="login-item">
+                    <label for="email">Correo electrónico</label>
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" id="email" name="email" placeholder="Ingresa el correo" required
+                           pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+                </div>
+
+                <div class="login-item">
+                    <label for="role">Rol</label>
+                    <i class="fas fa-user-tag input-icon"></i>
+                    <select id="role" name="role" required>
+                        <option value="">Seleccione un rol</option>
+                        <option value="Administrador">Administrador</option>
+                        <option value="Usuario">Usuario</option>
+                        <option value="Invitado">Invitado</option>
+                    </select>
+                </div>
+
+                <div class="action-buttons">
+                    <button type="submit" class="btn btn-primary" id="submitBtn">Guardar</button>
+                    <button type="button" class="btn btn-secondary" id="cancelBtn" style="display:none;">Cancelar</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Sección del listado -->
+        <div class="list-section">
+            <h2 class="login-title">LISTA DE USUARIOS</h2>
+
+            <table class="users-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Rol</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="usersTableBody">
+                    <!-- Los usuarios se cargarán aquí dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
